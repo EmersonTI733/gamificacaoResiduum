@@ -1,0 +1,259 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "3.0.3",
+    "title": "API residuum, sistema de gestao",
+    "description": "Documentacao automatica gerada pelo swagger autogen"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": {
+    "name": "loginUsuario",
+    "description": "Endpoints"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apikey",
+      "in": "header",
+      "name": "Authorization",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
+    }
+  },
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "paths": {
+    "/login/usuario": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "description": "rota de login usuario",
+        "parameters": [
+          {
+            "name": "Usuario = {   in: body,   description: o usuario vai logar,   required: true,   schema: {$ref: #/definitions/loginUsuario}   }",
+            "in": "body",
+            "description": "o usuario vai logar",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/loginUsuario"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/criar/usuario": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "description": "rota de criar usuario",
+        "parameters": [
+          {
+            "name": "usuario_criar = {   in: body,   description: Criar um usuario no banco,   required: true,   schema: {$ref: #/definitions/cria_usuario}   }",
+            "in": "body",
+            "description": "Criar um usuario no banco",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cria_usuario"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/listar/usuario": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "description": "buscar cliente",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/editar/usuario": {
+      "put": {
+        "tags": [
+          "Usuario"
+        ],
+        "description": "rota de editar usuario",
+        "parameters": [
+          {
+            "name": "usuario_editar = {   in: body,   description: editar um usuario no banco,   required: true,   schema: {$ref: #/definitions/editar_usuario}   }",
+            "in": "body",
+            "description": "editar um usuario no banco",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/editar_usuario"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/delete/usuario": {
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "description": "rota de deletar usuario",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "usuario_deletar = {   in: body,   description: deletar um usuario no banco,   required: true,   schema: {$ref: #/definitions/delete_usuario}   }",
+            "in": "body",
+            "description": "deletar um usuario no banco",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/delete_usuario"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "loginUsuario": {
+      "type": "object",
+      "properties": {
+        "usuario_nome": {
+          "type": "string",
+          "example": "emerson"
+        },
+        "usuario_matricula": {
+          "type": "string",
+          "example": "1234"
+        },
+        "usuario_senha": {
+          "type": "string",
+          "example": "1234"
+        }
+      },
+      "required": [
+        "usuario_nome",
+        "usuario_matricula",
+        "usuario_senha"
+      ]
+    },
+    "cria_usuario": {
+      "type": "object",
+      "properties": {
+        "usuario_nome": {
+          "type": "string",
+          "example": "emerson"
+        },
+        "usuario_matricula": {
+          "type": "string",
+          "example": "1234"
+        },
+        "usuario_senha": {
+          "type": "string",
+          "example": "1234"
+        }
+      },
+      "required": [
+        "usuario_nome",
+        "usuario_matricula",
+        "usuario_senha"
+      ]
+    },
+    "editar_usuario": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "1"
+        },
+        "usuario_nome": {
+          "type": "string",
+          "example": "emerson"
+        },
+        "usuario_matricula": {
+          "type": "string",
+          "example": "1234"
+        },
+        "usuario_senha": {
+          "type": "string",
+          "example": "1234"
+        }
+      },
+      "required": [
+        "id",
+        "usuario_nome",
+        "usuario_matricula",
+        "usuario_senha"
+      ]
+    },
+    "delete_usuario": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "1"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "security": {
+    "bearerAuth": [
+      "delete_usuario"
+    ]
+  }
+}
