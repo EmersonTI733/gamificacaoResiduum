@@ -1,14 +1,13 @@
 const tarefaModel = require('../../db/tarefaModels');
 
-exports.listar = async (req, res) => {
+exports.buscarDados = async (req, res) => {
     // #swagger.tags = ['Usuario']
       // #swagger.description = 'buscar cliente'
-          const listar = await tarefaModel.listar();
+          const Dados = await tarefaModel.listarDados();
           try{
-            return res.status(201).json(data={
-              status:'sucesso',
+            return res.status(200).json(data={
               message:"Listagem realizada",
-              data:listar
+              Dados
           });
           }catch{
             return res.status(404).json(data={

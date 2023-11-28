@@ -31,25 +31,15 @@ const doc = {
       "bearerAuth":["delete_usuario"],
     },
     definitions: {
-      loginUsuario:{
-              $usuario_nome:"emerson",
-              $usuario_matricula: "1234",
-              $usuario_senha: "1234",
+      cadastrarParticipante:{
+              $nome:"emerson",
+              $nascimento:"12/12/12",
+              $celular:"92993464549",
+              $sexo:"masculino",
+              $email:"emerson@gmail.com",
+              $endereco:"sao jose, 45",
+              $escolaridade:"ensino medio",
       },
-      cria_usuario:{
-        $usuario_nome:"emerson",
-        $usuario_matricula:"1234",
-        $usuario_senha:"1234"
-      },
-      editar_usuario:{
-        $id: "1",
-        $usuario_nome:"emerson",
-        $usuario_matricula:"1234",
-        $usuario_senha:"1234"
-      },
-      delete_usuario:{ 
-        $id: "1"
-      }
     },
     
     

@@ -1,23 +1,21 @@
 const tarefaModel = require('../../db/tarefaModels');
 
-exports.editarUsuario = async(req, res)=>{
-   // #swagger.tags = ['Usuario']
-    // #swagger.description = 'rota de editar usuario'
+exports.adicionarResiduo = async(req, res)=>{
+   // #swagger.tags = ['participante']
+    // #swagger.description = 'inserir residuo'
 
     /*
-        #swagger.parameters['usuario_editar' = {
+        #swagger.parameters['inserir_residuo' = {
             in: 'body',
             description: 'editar um usuario no banco',
             required: true,
-            schema: {$ref: "#/definitions/editar_usuario"}
+            schema: {$ref: "#/definitions/cadastraResiduo"}
         }]
      */
   const dados = req.body;
-  // id, usuario_nome, usuario_matricula, usuario senha
-  const validar = await tarefaModel.verificaDados(dados.id);
+  const validar = await tarefaModel.verificaDados(dados.matricula);
   if(validar){
       const editar = await tarefaModel.UpDate(dados);
-
       if (editar){
         return res.status(200).json(
           data={
@@ -32,10 +30,10 @@ exports.editarUsuario = async(req, res)=>{
       })
       }
   }else{
-    return res.status(201).json(
+    return res.status(404).json(
       data={
-      message:'erro de dados',
-      code: 201
+      message:'matricula invalida',
+      code: 404
   })
   }
   

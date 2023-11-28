@@ -1,18 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const listar = require('./controllers/listar');
-const criar_usuario = require('./controllers/criar_usuario');
-const loginUsuario = require('./controllers/loginUsuario');
-const editarUsuario = require('./controllers/editarUsuario');
-const deleteUsuario = require('./controllers/deletarUsuario')
-const {eAdmin} = require('./midlleware/auth');
+const cadastrar = require('./controllers/cadastrarParticipante');
+const cadastraResiduo = require('./controllers/adicionarResiduo');
+const buscarDados = require('./controllers/buscarDados');
 
-router.post('/login/usuario', loginUsuario.loginUsuario);
-router.post('/criar/usuario', criar_usuario.criarUsuario);
-router.get('/listar/usuario', listar.listar);
-router.put('/editar/usuario', editarUsuario.editarUsuario);
-router.delete('/delete/usuario', eAdmin, deleteUsuario.deleteUsuario)
+
+
+router.post('/cadastrar/participante', cadastrar.criarParticipante);
+router.post('/cadastrar/residuo', cadastraResiduo.adicionarResiduo);
+
+router.get('/buscar/dados', buscarDados.buscarDados);
+
 
 
 module.exports = router;
