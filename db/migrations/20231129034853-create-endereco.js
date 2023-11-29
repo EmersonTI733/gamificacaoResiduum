@@ -21,21 +21,6 @@ module.exports = {
       bairro: {
         type: Sequelize.STRING
       },
-      papel: {
-        type: Sequelize.FLOAT
-      },
-      metal: {
-        type: Sequelize.FLOAT
-      },
-      vidro: {
-        type: Sequelize.FLOAT
-      },
-      organico: {
-        type: Sequelize.FLOAT
-      },
-      plastico: {
-        type: Sequelize.FLOAT
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

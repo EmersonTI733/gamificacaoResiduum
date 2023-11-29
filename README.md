@@ -42,7 +42,7 @@ TRABALHANDO COM VARIAVEIS DE AMBIENTE
     npx sequelize-cli model:generate --name residuo --attributes matricula:integer,estado:string,cidade:string,bairro:string,papel:float,metal:float,vidro:float,organico:float,plastico:float
 
 # CRIAR A MIGRATION endereco
-    npx sequelize-cli model:generate --name endereco --attributes matricula:integer,estado:string,cidade:string,bairro:string,papel:float,metal:float,vidro:float,organico:float,plastico:float
+    npx sequelize-cli model:generate --name endereco --attributes matricula:integer,estado:string,cidade:string,bairro:string
   
 EXECUTAR A MIGRATION
 # npx sequelize-cli db:migrate

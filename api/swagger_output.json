@@ -63,14 +63,14 @@
     "/cadastrar/residuo": {
       "post": {
         "tags": [
-          "participante"
+          "Participante"
         ],
         "description": "inserir residuo",
         "parameters": [
           {
-            "name": "inserir_residuo = {   in: body,   description: editar um usuario no banco,   required: true,   schema: {$ref: #/definitions/cadastraResiduo}   }",
+            "name": "inserir_residuo = {   in: body,   description: cadastrar residuo no banco,   required: true,   schema: {$ref: #/definitions/cadastraResiduo}   }",
             "in": "body",
-            "description": "editar um usuario no banco",
+            "description": "cadastrar residuo no banco",
             "required": true,
             "schema": {
               "$ref": "#/definitions/cadastraResiduo"

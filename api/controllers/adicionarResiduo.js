@@ -2,13 +2,13 @@ const db = require('../../db/models/index');
 const tarefaModel = require('../../db/seeders/tarefaModels');
 
 exports.adicionarResiduo = async(req, res)=>{
-   // #swagger.tags = ['participante']
+   // #swagger.tags = ['Participante']
     // #swagger.description = 'inserir residuo'
 
     /*
         #swagger.parameters['inserir_residuo' = {
             in: 'body',
-            description: 'editar um usuario no banco',
+            description: 'cadastrar residuo no banco',
             required: true,
             schema: {$ref: "#/definitions/cadastraResiduo"}
         }]

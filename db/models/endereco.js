@@ -17,12 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     matricula: DataTypes.INTEGER,
     estado: DataTypes.STRING,
     cidade: DataTypes.STRING,
-    bairro: DataTypes.STRING,
-    papel: DataTypes.FLOAT,
-    metal: DataTypes.FLOAT,
-    vidro: DataTypes.FLOAT,
-    organico: DataTypes.FLOAT,
-    plastico: DataTypes.FLOAT
+    bairro: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'endereco',
