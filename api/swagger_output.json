@@ -90,12 +90,44 @@
         }
       }
     },
-    "/buscar/dados": {
+    "/buscar/dados/08": {
       "get": {
         "tags": [
-          "Usuario"
+          "Dashboard"
         ],
-        "description": "buscar cliente",
+        "description": "buscar dados de coleta do dia 08",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/buscar/dados/09": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "description": "buscar dados de coleta do dia 09",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/buscar/dados/10": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "description": "buscar dados de coleta do dia 10",
         "responses": {
           "200": {
             "description": "OK"
@@ -131,9 +163,17 @@
           "type": "string",
           "example": "emerson@gmail.com"
         },
-        "endereco": {
+        "estado": {
           "type": "string",
-          "example": "sao jose, 45"
+          "example": "amazonas"
+        },
+        "cidade": {
+          "type": "string",
+          "example": "manaus"
+        },
+        "bairro": {
+          "type": "string",
+          "example": "educandos"
         },
         "escolaridade": {
           "type": "string",
@@ -146,8 +186,47 @@
         "celular",
         "sexo",
         "email",
-        "endereco",
+        "estado",
+        "cidade",
+        "bairro",
         "escolaridade"
+      ]
+    },
+    "cadastraResiduo": {
+      "type": "object",
+      "properties": {
+        "matricula": {
+          "type": "number",
+          "example": 1003
+        },
+        "papel": {
+          "type": "number",
+          "example": 10.5
+        },
+        "metal": {
+          "type": "number",
+          "example": 10.5
+        },
+        "vidro": {
+          "type": "number",
+          "example": 10.5
+        },
+        "organico": {
+          "type": "number",
+          "example": 10.5
+        },
+        "plastico": {
+          "type": "number",
+          "example": 10.5
+        }
+      },
+      "required": [
+        "matricula",
+        "papel",
+        "metal",
+        "vidro",
+        "organico",
+        "plastico"
       ]
     }
   },

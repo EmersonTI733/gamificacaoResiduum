@@ -8,6 +8,9 @@
     ou
     $ npm run play
 
+    Verique documentacao Swagger na rota:
+    http://localhost:8080/api-docs
+
 INICIAR a CRIANCAO DO PROJETO
 # npm init
 

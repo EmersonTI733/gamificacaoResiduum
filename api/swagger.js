@@ -37,9 +37,19 @@ const doc = {
               $celular:"92993464549",
               $sexo:"masculino",
               $email:"emerson@gmail.com",
-              $endereco:"sao jose, 45",
+              $estado:"amazonas",
+              $cidade:"manaus",
+              $bairro:"educandos",
               $escolaridade:"ensino medio",
       },
+      cadastraResiduo:{
+        $matricula:1003,
+        $papel:10.5,
+        $metal:10.5,
+        $vidro:10.5,
+        $organico:10.5,
+        $plastico:10.5
+      }
     },
     
     

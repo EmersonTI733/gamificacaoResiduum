@@ -182,7 +182,7 @@ exports.verificaDados = async(matricula)=>{
         matricula: matricula,
     }
   });
-  
+
   if(user){
     return user;
   }else{
