@@ -2,27 +2,15 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('participantes', {
+    await queryInterface.createTable('enderecos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nomePar: {
-        type: Sequelize.STRING
-      },
-      nascimentoPar: {
-        type: Sequelize.STRING
-      },
-      celularPar: {
-        type: Sequelize.STRING
-      },
-      sexoPar: {
-        type: Sequelize.STRING
-      },
-      emailPar: {
-        type: Sequelize.STRING
+      matricula: {
+        type: Sequelize.INTEGER
       },
       estado: {
         type: Sequelize.STRING
@@ -33,11 +21,20 @@ module.exports = {
       bairro: {
         type: Sequelize.STRING
       },
-      escolaridadePar: {
-        type: Sequelize.STRING
+      papel: {
+        type: Sequelize.FLOAT
       },
-      matriculaPar: {
-        type: Sequelize.INTEGER
+      metal: {
+        type: Sequelize.FLOAT
+      },
+      vidro: {
+        type: Sequelize.FLOAT
+      },
+      organico: {
+        type: Sequelize.FLOAT
+      },
+      plastico: {
+        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
@@ -50,6 +47,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('participantes');
+    await queryInterface.dropTable('enderecos');
   }
 };

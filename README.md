@@ -33,11 +33,13 @@ TRABALHANDO COM VARIAVEIS DE AMBIENTE
 # npm install dotenv --save
 
 # CRIAR A MIGRATION participante
-    npx sequelize-cli model:generate --name participante --attributes nomePar:string,nascimentoPar:string,celularPar:string,sexoPar:string,emailPar:string,estado:string,cidade:string,bairro:string,escolaridadePar:string,matriculaPar:integer
+    npx sequelize-cli model:generate --name participante --attributes nomePar:string,nascimentoPar:string,celularPar:string,sexoPar:string,emailPar:string,escolaridadePar:string,matriculaPar:integer
 
 # CRIAR A MIGRATION residuo
-    npx sequelize-cli model:generate --name residuo --attributes matricula:integer,papel:float,metal:float,vidro:float,organico:float,plastico:float
+    npx sequelize-cli model:generate --name residuo --attributes matricula:integer,estado:string,cidade:string,bairro:string,papel:float,metal:float,vidro:float,organico:float,plastico:float
 
+# CRIAR A MIGRATION endereco
+    npx sequelize-cli model:generate --name endereco --attributes matricula:integer,estado:string,cidade:string,bairro:string,papel:float,metal:float,vidro:float,organico:float,plastico:float
   
 EXECUTAR A MIGRATION
 # npx sequelize-cli db:migrate

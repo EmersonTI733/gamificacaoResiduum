@@ -2,30 +2,33 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('residuos', {
+    await queryInterface.createTable('participantes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      matricula: {
+      nomePar: {
+        type: Sequelize.STRING
+      },
+      nascimentoPar: {
+        type: Sequelize.STRING
+      },
+      celularPar: {
+        type: Sequelize.STRING
+      },
+      sexoPar: {
+        type: Sequelize.STRING
+      },
+      emailPar: {
+        type: Sequelize.STRING
+      },
+      escolaridadePar: {
+        type: Sequelize.STRING
+      },
+      matriculaPar: {
         type: Sequelize.INTEGER
-      },
-      papel: {
-        type: Sequelize.FLOAT
-      },
-      metal: {
-        type: Sequelize.FLOAT
-      },
-      vidro: {
-        type: Sequelize.FLOAT
-      },
-      organico: {
-        type: Sequelize.FLOAT
-      },
-      plastico: {
-        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('residuos');
+    await queryInterface.dropTable('participantes');
   }
 };

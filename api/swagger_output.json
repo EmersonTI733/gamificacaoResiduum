@@ -33,50 +33,20 @@
     "application/x-www-form-urlencoded"
   ],
   "paths": {
-    "/login/usuario": {
+    "/cadastrar/participante": {
       "post": {
         "tags": [
-          "Usuario"
-        ],
-        "description": "rota de login usuario",
-        "parameters": [
-          {
-            "name": "Usuario = {   in: body,   description: o usuario vai logar,   required: true,   schema: {$ref: #/definitions/loginUsuario}   }",
-            "in": "body",
-            "description": "o usuario vai logar",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/loginUsuario"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/criar/usuario": {
-      "post": {
-        "tags": [
-          "Usuario"
+          "Participante"
         ],
         "description": "rota de criar usuario",
         "parameters": [
           {
-            "name": "usuario_criar = {   in: body,   description: Criar um usuario no banco,   required: true,   schema: {$ref: #/definitions/cria_usuario}   }",
+            "name": "cadastrar_participante = {   in: body,   description: cadastrar o participante no banco,   required: true,   schema: {$ref: #/definitions/cadastrarParticipante}   }",
             "in": "body",
-            "description": "Criar um usuario no banco",
+            "description": "cadastrar o participante no banco",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/cria_usuario"
+              "$ref": "#/definitions/cadastrarParticipante"
             }
           }
         ],
@@ -90,36 +60,20 @@
         }
       }
     },
-    "/listar/usuario": {
-      "get": {
+    "/cadastrar/residuo": {
+      "post": {
         "tags": [
-          "Usuario"
+          "participante"
         ],
-        "description": "buscar cliente",
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/editar/usuario": {
-      "put": {
-        "tags": [
-          "Usuario"
-        ],
-        "description": "rota de editar usuario",
+        "description": "inserir residuo",
         "parameters": [
           {
-            "name": "usuario_editar = {   in: body,   description: editar um usuario no banco,   required: true,   schema: {$ref: #/definitions/editar_usuario}   }",
+            "name": "inserir_residuo = {   in: body,   description: editar um usuario no banco,   required: true,   schema: {$ref: #/definitions/cadastraResiduo}   }",
             "in": "body",
             "description": "editar um usuario no banco",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/editar_usuario"
+              "$ref": "#/definitions/cadastraResiduo"
             }
           }
         ],
@@ -129,32 +83,19 @@
           },
           "201": {
             "description": "Created"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
     },
-    "/delete/usuario": {
-      "delete": {
+    "/buscar/dados": {
+      "get": {
         "tags": [
           "Usuario"
         ],
-        "description": "rota de deletar usuario",
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
-            "name": "usuario_deletar = {   in: body,   description: deletar um usuario no banco,   required: true,   schema: {$ref: #/definitions/delete_usuario}   }",
-            "in": "body",
-            "description": "deletar um usuario no banco",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/delete_usuario"
-            }
-          }
-        ],
+        "description": "buscar cliente",
         "responses": {
           "200": {
             "description": "OK"
@@ -167,87 +108,46 @@
     }
   },
   "definitions": {
-    "loginUsuario": {
+    "cadastrarParticipante": {
       "type": "object",
       "properties": {
-        "usuario_nome": {
+        "nome": {
           "type": "string",
           "example": "emerson"
         },
-        "usuario_matricula": {
+        "nascimento": {
           "type": "string",
-          "example": "1234"
+          "example": "12/12/12"
         },
-        "usuario_senha": {
+        "celular": {
           "type": "string",
-          "example": "1234"
+          "example": "92993464549"
+        },
+        "sexo": {
+          "type": "string",
+          "example": "masculino"
+        },
+        "email": {
+          "type": "string",
+          "example": "emerson@gmail.com"
+        },
+        "endereco": {
+          "type": "string",
+          "example": "sao jose, 45"
+        },
+        "escolaridade": {
+          "type": "string",
+          "example": "ensino medio"
         }
       },
       "required": [
-        "usuario_nome",
-        "usuario_matricula",
-        "usuario_senha"
-      ]
-    },
-    "cria_usuario": {
-      "type": "object",
-      "properties": {
-        "usuario_nome": {
-          "type": "string",
-          "example": "emerson"
-        },
-        "usuario_matricula": {
-          "type": "string",
-          "example": "1234"
-        },
-        "usuario_senha": {
-          "type": "string",
-          "example": "1234"
-        }
-      },
-      "required": [
-        "usuario_nome",
-        "usuario_matricula",
-        "usuario_senha"
-      ]
-    },
-    "editar_usuario": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "example": "1"
-        },
-        "usuario_nome": {
-          "type": "string",
-          "example": "emerson"
-        },
-        "usuario_matricula": {
-          "type": "string",
-          "example": "1234"
-        },
-        "usuario_senha": {
-          "type": "string",
-          "example": "1234"
-        }
-      },
-      "required": [
-        "id",
-        "usuario_nome",
-        "usuario_matricula",
-        "usuario_senha"
-      ]
-    },
-    "delete_usuario": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "example": "1"
-        }
-      },
-      "required": [
-        "id"
+        "nome",
+        "nascimento",
+        "celular",
+        "sexo",
+        "email",
+        "endereco",
+        "escolaridade"
       ]
     }
   },

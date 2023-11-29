@@ -23,16 +23,15 @@ exports.criarParticipante = async(req, res) => {
         celularPar: dados.celular,
         sexoPar: dados.sexo,
         emailPar: dados.email,
-        estado: dados.estado,
-        cidade: dados.cidade,
-        bairro: dados.bairro,
         escolaridadePar: dados.escolaridade,
         matriculaPar: tamanho.count+1001,
       })
-      await db.residuo.create({
-        id: criar.id,
-        matricula:criar.matriculaPar,
-        plastico: 10.5
+      await db.endereco.create({
+        matricula: criar.matriculaPar,
+        estado: dados.estado,
+        cidade: dados.cidade,
+        bairro: dados.bairro,
+        
       })
       
   

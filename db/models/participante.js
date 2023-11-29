@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       participante.hasOne(db.residuo, {
         foreignKey: 'id',
       });
+      participante.hasOne(db.endereco, {
+        foreignKey: 'id',
+      });
     }
   }
   participante.init({
@@ -24,9 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     celularPar: DataTypes.STRING,
     sexoPar: DataTypes.STRING,
     emailPar: DataTypes.STRING,
-    estado: DataTypes.STRING,
-    cidade: DataTypes.STRING,
-    bairro: DataTypes.STRING,
     escolaridadePar: DataTypes.STRING,
     matriculaPar: DataTypes.INTEGER
   }, {
